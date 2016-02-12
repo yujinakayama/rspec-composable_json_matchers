@@ -1,4 +1,4 @@
-require "rspec/composable_json_matchers/version"
+require 'rspec/composable_json_matchers/version'
 
 module Rspec
   module ComposableJsonMatchers
