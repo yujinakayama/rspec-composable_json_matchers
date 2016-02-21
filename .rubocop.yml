@@ -1,5 +1,12 @@
+Lint/HandleExceptions:
+  Exclude:
+    - 'spec/**/*'
+
 Metrics/LineLength:
   Max: 100
+
+Style/CaseEquality:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false
