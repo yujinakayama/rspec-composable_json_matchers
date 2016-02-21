@@ -1,7 +1,7 @@
 require 'rspec/composable_json_matchers/version'
 
-module Rspec
-  module ComposableJsonMatchers
+module RSpec
+  module ComposableJSONMatchers
     # Your code goes here...
   end
 end
