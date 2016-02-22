@@ -5,7 +5,7 @@ require 'rspec/composable_json_matchers/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'rspec-composable_json_matchers'
-  spec.version       = RSpec::ComposableJSONMatchers::VERSION
+  spec.version       = RSpec::ComposableJSONMatchers::Version.to_s
   spec.authors       = ['Yuji Nakayama']
   spec.email         = ['nkymyj@gmail.com']
 
