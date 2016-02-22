@@ -265,4 +265,10 @@ RSpec.describe '#be_json matcher' do
       expectation
     end
   end
+
+  context 'when chained with `and`' do
+    it 'makes compound expectations' do
+      expect(actual_json).to be_json(actual_original).and be_a(String)
+    end
+  end
 end
