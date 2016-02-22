@@ -1,5 +1,6 @@
 module RSpec
   module ComposableJSONMatchers
+    # @api private
     class BeJSON
       include RSpec::Matchers::Composable
 

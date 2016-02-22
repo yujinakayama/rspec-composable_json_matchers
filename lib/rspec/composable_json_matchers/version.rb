@@ -1,5 +1,6 @@
 module RSpec
   module ComposableJSONMatchers
+    # @api public
     module Version
       MAJOR = 0
       MINOR = 1
