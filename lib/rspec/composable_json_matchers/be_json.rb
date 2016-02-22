@@ -3,10 +3,11 @@ module RSpec
     class BeJSON
       include RSpec::Matchers::Composable
 
-      attr_reader :matcher, :original_actual, :decoded_actual, :parser_error
+      attr_reader :matcher, :configuration, :original_actual, :decoded_actual, :parser_error
 
-      def initialize(matcher)
+      def initialize(matcher, configuration)
         @matcher = matcher
+        @configuration = configuration
       end
 
       def matches?(actual)
@@ -51,7 +52,7 @@ module RSpec
 
       def parse(json)
         require 'json'
-        JSON.parse(json, symbolize_names: true)
+        JSON.parse(json, configuration.parser_options)
       end
 
       def parser_failure_message

@@ -246,4 +246,23 @@ RSpec.describe '#be_json matcher' do
       include_examples 'is not diffable'
     end
   end
+
+  context 'when ComposableJSONMatchers.configuration.parser_options is configured', :positive do
+    before do
+      RSpec::ComposableJSONMatchers.configure do |config|
+        config.parser_options = { symbolize_names: false }
+      end
+    end
+
+    let(:arg) do
+      {
+        'foo' => 1,
+        'bar' => 2
+      }
+    end
+
+    it 'parses JSON using the options' do
+      expectation
+    end
+  end
 end

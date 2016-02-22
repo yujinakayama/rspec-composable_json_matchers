@@ -84,4 +84,8 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 
   config.include RSpec::Matchers::FailMatchers
+
+  config.before do
+    RSpec::ComposableJSONMatchers.reset!
+  end
 end
