@@ -5,5 +5,10 @@ gemspec
 group :development, :test do
   gem 'rake', '~> 10.0'
   gem 'rubocop', '~> 0.37'
+  gem 'simplecov', '~> 0.11'
   gem 'yard', '~> 0.8'
+end
+
+group :test do
+  gem 'coveralls', '~> 0.8'
 end
