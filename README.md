@@ -1,3 +1,9 @@
+[![Gem Version](http://img.shields.io/gem/v/rspec-composable_json_matchers.svg?style=flat)](http://badge.fury.io/rb/rspec-composable_json_matchers)
+[![Dependency Status](http://img.shields.io/gemnasium/yujinakayama/rspec-composable_json_matchers.svg?style=flat)](https://gemnasium.com/yujinakayama/rspec-composable_json_matchers)
+[![Build Status](https://travis-ci.org/yujinakayama/rspec-composable_json_matchers.svg?branch=master&style=flat)](https://travis-ci.org/yujinakayama/rspec-composable_json_matchers)
+[![Coverage Status](http://img.shields.io/coveralls/yujinakayama/rspec-composable_json_matchers/master.svg?style=flat)](https://coveralls.io/r/yujinakayama/rspec-composable_json_matchers)
+[![Code Climate](https://img.shields.io/codeclimate/github/yujinakayama/rspec-composable_json_matchers.svg?style=flat)](https://codeclimate.com/github/yujinakayama/rspec-composable_json_matchers)
+
 # RSpec::ComposableJSONMatchers
 
 **RSpec::ComposableJSONMatchers** provides `be_json` matcher,
