@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
+  gem 'coderay', '~> 1.1'
   gem 'rake', '~> 10.0'
   gem 'rubocop', '~> 0.37'
   gem 'simplecov', '~> 0.11'
