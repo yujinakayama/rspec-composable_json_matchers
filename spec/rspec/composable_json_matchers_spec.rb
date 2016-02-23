@@ -1,9 +1,6 @@
-require 'rspec/composable_json_matchers'
 require 'json'
 
 RSpec.describe '#be_json matcher' do
-  include RSpec::ComposableJSONMatchers
-
   subject(:matcher) do
     be_json(arg)
   end
