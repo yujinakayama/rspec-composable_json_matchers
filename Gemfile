@@ -4,6 +4,6 @@ gemspec
 
 group :development, :test do
   gem 'rake', '~> 10.0'
-  gem 'rubocop'
-  gem 'yard'
+  gem 'rubocop', '~> 0.37'
+  gem 'yard', '~> 0.8'
 end
