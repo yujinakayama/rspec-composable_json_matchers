@@ -106,6 +106,10 @@ expect('{ "foo": 1, "bar": 2 }').to be_json matching(
 expect('{ "foo": 1, "bar": 2 }').to be_json including(foo: a_kind_of(Integer))
 ```
 
+For more practical example, see
+[`spec/example_spec.rb`](https://github.com/yujinakayama/rspec-composable_json_matchers/blob/master/spec/example_spec.rb)
+for the [GitHub Meta API](https://developer.github.com/v3/meta/).
+
 ## Combinations with built-in matchers
 
 Since decoded JSON is always a hash or an array, you may want to use any of the following built-in matchers.
