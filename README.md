@@ -53,7 +53,7 @@ Or if you prefer more explicit way, add the following snippet:
 require 'rspec/composable_json_matchers'
 
 RSpec.configure do |config|
-  include RSpec::ComposableJSONMatchers
+  config.include RSpec::ComposableJSONMatchers
 end
 ```
 
