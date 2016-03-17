@@ -1,4 +1,4 @@
-require 'rspec/matchers/composable'
+require 'rspec/matchers'
 
 module RSpec
   module ComposableJSONMatchers
