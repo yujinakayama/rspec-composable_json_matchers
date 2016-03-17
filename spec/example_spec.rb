@@ -12,7 +12,7 @@ RSpec::Matchers.define :be_ip_address do
   end
 end
 
-RSpec.describe 'https://api.github.com/meta' do
+RSpec.describe 'https://api.github.com/meta', :vcr do
   subject(:response) do
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true

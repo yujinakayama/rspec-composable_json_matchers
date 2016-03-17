@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/meta
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 17 Mar 2016 21:44:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '58'
+      X-Ratelimit-Reset:
+      - '1458254188'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept
+      - Accept-Encoding
+      Etag:
+      - W/"253d4e6c801559de31af312813a09e3e"
+      X-Github-Media-Type:
+      - github.v3
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 2d7a5e35115884240089368322196939
+      X-Github-Request-Id:
+      - B74D34D0:2DFE:50377E:56EB253B
+    body:
+      encoding: ASCII-8BIT
+      string: '{"verifiable_password_authentication":true,"github_services_sha":"e1d94d27d86615e5a25e64b35624653c7856fe2c","hooks":["192.30.252.0/22"],"git":["192.30.252.0/22"],"pages":["192.30.252.153/32","192.30.252.154/32"],"importer":["54.158.161.132","54.226.70.38","54.87.5.173"]}'
+    http_version: 
+  recorded_at: Thu, 17 Mar 2016 21:44:27 GMT
+recorded_with: VCR 3.0.1
