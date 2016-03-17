@@ -1,3 +1,5 @@
+require 'rspec/matchers/composable'
+
 module RSpec
   module ComposableJSONMatchers
     # @api private
