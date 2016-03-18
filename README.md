@@ -114,8 +114,8 @@ for the [GitHub Meta API](https://developer.github.com/v3/meta/).
 
 Since decoded JSON is always a hash or an array, you may want to use any of the following built-in matchers.
 
-Note that you can always use the `matching` matcher (internally uses `#===`)
-instead of the `eq_to` matcher (internally uses `#==`),
+Note that you can always use the `match` matcher (internally uses `#===`)
+instead of the `eq` matcher (internally uses `#==`),
 because there's no object that is parsed from JSON and behaves differently between `#==` and `#===`.
 
 Of course, any other custom matchers supporting a hash or an array can also be used.
