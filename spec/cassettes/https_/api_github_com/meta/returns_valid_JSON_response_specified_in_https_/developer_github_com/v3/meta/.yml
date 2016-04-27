@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 17 Mar 2016 21:44:27 GMT
+      - Wed, 27 Apr 2016 11:03:30 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,16 +31,16 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '58'
+      - '56'
       X-Ratelimit-Reset:
-      - '1458254188'
+      - '1461757441'
       Cache-Control:
       - public, max-age=60, s-maxage=60
       Vary:
       - Accept
       - Accept-Encoding
       Etag:
-      - W/"253d4e6c801559de31af312813a09e3e"
+      - W/"e027495236053d12c7cb8ef22328efcd"
       X-Github-Media-Type:
       - github.v3
       Access-Control-Expose-Headers:
@@ -59,12 +59,12 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Served-By:
-      - 2d7a5e35115884240089368322196939
+      - a6882e5cd2513376cb9481dbcd83f3a2
       X-Github-Request-Id:
-      - B74D34D0:2DFE:50377E:56EB253B
+      - 1B574287:DA3F:1F81AA53:57209C82
     body:
       encoding: ASCII-8BIT
-      string: '{"verifiable_password_authentication":true,"github_services_sha":"e1d94d27d86615e5a25e64b35624653c7856fe2c","hooks":["192.30.252.0/22"],"git":["192.30.252.0/22"],"pages":["192.30.252.153/32","192.30.252.154/32"],"importer":["54.158.161.132","54.226.70.38","54.87.5.173"]}'
+      string: '{"verifiable_password_authentication":true,"github_services_sha":"81864a39bc318f6c8a4f359ad1f40239e3f95e24","hooks":["192.30.252.0/22"],"git":["192.30.252.0/22"],"pages":["192.30.252.153/32","192.30.252.154/32"],"importer":["54.158.161.132","54.226.70.38","54.87.5.173"]}'
     http_version: 
-  recorded_at: Thu, 17 Mar 2016 21:44:27 GMT
+  recorded_at: Wed, 27 Apr 2016 11:03:31 GMT
 recorded_with: VCR 3.0.1

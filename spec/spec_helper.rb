@@ -97,6 +97,8 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
 end
 
+WebMock.enable!
+
 if ENV['TRAVIS'] || ENV['COVERAGE']
   require 'simplecov'
 

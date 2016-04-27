@@ -8,7 +8,7 @@ group :development, :test do
   gem 'rubocop', '~> 0.37'
   gem 'simplecov', '~> 0.11'
   gem 'vcr', '~> 3.0'
-  gem 'webmock', '~> 1.24'
+  gem 'webmock', '~> 2.0'
   gem 'yard', '~> 0.8'
 end
 
