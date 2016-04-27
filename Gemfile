@@ -4,7 +4,7 @@ gemspec
 
 group :development, :test do
   gem 'coderay', '~> 1.1'
-  gem 'rake', '~> 10.0'
+  gem 'rake', '~> 11.1'
   gem 'rubocop', '~> 0.37'
   gem 'simplecov', '~> 0.11'
   gem 'vcr', '~> 3.0'
