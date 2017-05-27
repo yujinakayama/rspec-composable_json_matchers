@@ -133,7 +133,7 @@ RSpec.describe '#be_json matcher' do
 
     context 'when the decoded actual matches the array' do
       let(:actual_original) do
-        %w(foo bar)
+        %w[foo bar]
       end
 
       context 'with positive expectation', :positive do

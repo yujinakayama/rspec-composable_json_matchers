@@ -2,6 +2,10 @@ Lint/HandleExceptions:
   Exclude:
     - 'spec/**/*'
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 Metrics/LineLength:
   Max: 100
 
