@@ -133,7 +133,7 @@ RSpec.describe '#be_json matcher' do
 
     context 'when the decoded actual matches the array' do
       let(:actual_original) do
-        %w(foo bar)
+        %w[foo bar]
       end
 
       context 'with positive expectation', :positive do
@@ -192,7 +192,7 @@ RSpec.describe '#be_json matcher' do
       context 'with negative expectation', :negative do
         include_examples 'fails', 'expected {"foo":1,"bar":2} not to be JSON including {:bar => 2}'
         include_examples 'is diffable' do
-          let(:expected_structure) { [{ bar: 2 }] }
+          let(:expected_structure) { { bar: 2 } }
         end
       end
     end
