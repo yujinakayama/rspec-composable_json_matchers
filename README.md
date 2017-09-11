@@ -182,6 +182,17 @@ expect('["foo", "bar"]').to be_json starting_with('foo')
 expect('["foo", "bar"]').to be_json ending_with('bar')
 ```
 
+### `having_attributes`
+
+* Alias of [`have_attributes`](https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/have-attributes-matcher) matcher
+* Supported structure: Hash and Array
+* Accepts matchers as arguments: Yes
+
+```ruby
+expect('{ "foo": 1, "bar": 2 }').to be_json having_attributes(keys: [:foo, :bar])
+expect('["foo", "bar"]').to be_json having_attributes(size: 2)
+```
+
 ### `a_kind_of`
 
 * Alias of [`be_a_kind_of`](https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/type-matchers#be-(a-)kind-of-matcher) matcher
