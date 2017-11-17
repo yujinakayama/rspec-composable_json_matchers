@@ -5,7 +5,7 @@ gemspec
 group :development, :test do
   gem 'coderay', '~> 1.1'
   gem 'rake', '~> 12.0'
-  gem 'rubocop', '~> 0.37'
+  gem 'rubocop', '~> 0.51'
   gem 'simplecov', '~> 0.11'
   gem 'vcr', '~> 3.0'
   gem 'webmock', '~> 3.0'
