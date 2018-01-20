@@ -9,7 +9,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.11'
   gem 'vcr', '~> 3.0'
   gem 'webmock', '~> 3.0'
-  gem 'yard', '~> 0.8'
+  gem 'yard', '>= 0.9.11', '< 1.0'
 end
 
 group :test do
