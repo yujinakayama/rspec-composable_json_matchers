@@ -71,10 +71,11 @@ end
 
 ## Usage
 
-The `be_json` matcher takes another matcher, a hash, or an array.
+The `be_json` matcher takes another matcher
+or a JSON value (hash, array, numeric, string, true, false, or nil).
 
 When a matcher is given,
-it passes if actual string can be decoded as JSON and the decoded structure passes the given matcher:
+it passes if actual string can be decoded as JSON and the decoded value passes the given matcher:
 
 ```ruby
 expect('{ "foo": 1, "bar": 2 }').to be_json a_kind_of(Hash)
@@ -84,10 +85,12 @@ expect('{ "foo": 1, "bar": 2 }').to be_json including(foo: 1)
 expect('["foo", "bar"]').to be_json a_kind_of(Array)
 expect('["foo", "bar"]').to be_json matching(['foo', 'bar'])
 expect('["foo", "bar"]').to be_json including('foo')
+
+expect('null').to be_json(nil)
 ```
 
-When a hash or an array is given,
-it's handled as `be_json matching(hash_or_array)` (`matching` is an alias of the `match` matcher):
+When a JSON value is given,
+it's handled as `be_json matching(value)` (`matching` is an alias of the `match` matcher):
 
 ```ruby
 # Equivalents
@@ -112,13 +115,14 @@ for the [GitHub Meta API](https://developer.github.com/v3/meta/).
 
 ## Combinations with built-in matchers
 
-Since decoded JSON is always a hash or an array, you may want to use any of the following built-in matchers.
+Since decoded JSON is a hash or an array in most cases,
+you may want to use any of the following built-in matchers.
 
 Note that you can always use the `match` matcher (internally uses `#===`)
 instead of the `eq` matcher (internally uses `#==`),
 because there's no object that is parsed from JSON and behaves differently between `#==` and `#===`.
 
-Of course, any other custom matchers supporting a hash or an array can also be used.
+Of course, any other custom matchers can also be used.
 
 ### `matching`
 

@@ -168,6 +168,94 @@ RSpec.describe '#be_json matcher' do
     end
   end
 
+  context 'with a string' do
+    let(:arg) do
+      'foo'
+    end
+
+    it 'provides description "be JSON matching EXPECTED"' do
+      expect(matcher.description).to eq('be JSON matching "foo"')
+    end
+
+    context 'when the decoded actual matches the string' do
+      let(:actual_original) do
+        'foo'
+      end
+
+      context 'with positive expectation', :positive do
+        include_examples 'passes'
+      end
+
+      context 'with negative expectation', :negative do
+        include_examples 'fails', 'expected "foo" not to be JSON matching "foo"'
+        include_examples 'is diffable' do
+          let(:expected_structure) { arg }
+        end
+      end
+    end
+
+    context 'when the decoded actual does not match the array' do
+      let(:actual_original) do
+        'bar'
+      end
+
+      context 'with positive expectation', :positive do
+        include_examples 'fails', 'expected "bar" to be JSON matching "foo"'
+        include_examples 'is diffable' do
+          let(:expected_structure) { arg }
+        end
+      end
+
+      context 'with negative expectation', :negative do
+        include_examples 'passes'
+      end
+    end
+  end
+
+  context 'with a string' do
+    let(:arg) do
+      nil
+    end
+
+    it 'provides description "be JSON matching EXPECTED"' do
+      expect(matcher.description).to eq('be JSON matching nil')
+    end
+
+    context 'when the decoded actual is nil' do
+      let(:actual_original) do
+        nil
+      end
+
+      context 'with positive expectation', :positive do
+        include_examples 'passes'
+      end
+
+      context 'with negative expectation', :negative do
+        include_examples 'fails', 'expected null not to be JSON matching nil'
+        include_examples 'is diffable' do
+          let(:expected_structure) { arg }
+        end
+      end
+    end
+
+    context 'when the decoded actual is not nil' do
+      let(:actual_original) do
+        false
+      end
+
+      context 'with positive expectation', :positive do
+        include_examples 'fails', 'expected false to be JSON matching nil'
+        include_examples 'is diffable' do
+          let(:expected_structure) { arg }
+        end
+      end
+
+      context 'with negative expectation', :negative do
+        include_examples 'passes'
+      end
+    end
+  end
+
   context 'with #including matcher' do
     let(:arg) do
       including(bar: 2)
@@ -198,9 +286,9 @@ RSpec.describe '#be_json matcher' do
     end
   end
 
-  context 'with an object neither matcher, hash, nor array', :positive do
+  context 'with a non-JSON value', :positive do
     let(:arg) do
-      'foo'
+      Object.new
     end
 
     it 'raises ArgumentError' do

@@ -64,16 +64,31 @@ module RSpec
 
         object.respond_to?(:matches?)
       end
+
+      # @api private
+      def json_value?(object)
+        # value = false / null / true / object / array / number / string
+        # https://www.rfc-editor.org/rfc/rfc8259.txt
+        case object
+        when Hash, Array, Numeric, String, TrueClass, FalseClass, NilClass
+          true
+        else
+          false
+        end
+      end
     end
 
     # @api public
     #
-    # Passes if actual string can be decoded as JSON and the decoded structure passes the given
-    # matcher. When a hash is given, it's handled as `be_json matching(hash)` (`matching` is an
-    # alias of the [`match`](http://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/match-matcher)
+    # Passes if actual string can be decoded as JSON and the decoded value passes the given
+    # matcher. When a JSON value is given, it's handled as `be_json matching(value)`
+    # (`matching` is an alias of the [`match`](http://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/match-matcher)
     # matcher).
     #
-    # @param matcher_or_structure [#matches?, Hash, Array] a matcher object, a hash, or an array
+    # @param
+    #   matcher_or_json_value
+    #   [#matches?, Hash, Array, Numeric, String, TrueClass, FalseClass, NilClass]
+    #   a matcher object or a JSON value
     #
     # @example
     #   expect('{ "foo": 1, "bar": 2 }').to be_json(foo: 1, bar: 2)
@@ -81,14 +96,16 @@ module RSpec
     #   expect('{ "foo": 1, "bar": 2 }').to be_json matching(foo: 1, bar: 2)
     #   expect('{ "foo": 1, "bar": 2 }').to be_json including(foo: 1)
     #   expect('{ "foo": 1, "bar": 2 }').to be_json a_kind_of(Hash)
-    def be_json(matcher_or_structure)
-      if Hash === matcher_or_structure || Array === matcher_or_structure
-        matcher = matching(matcher_or_structure)
+    def be_json(matcher_or_json_value)
+      if ComposableJSONMatchers.matcher?(matcher_or_json_value)
+        BeJSON.new(matcher_or_json_value, ComposableJSONMatchers.configuration)
+      elsif ComposableJSONMatchers.json_value?(matcher_or_json_value)
+        matcher = matching(matcher_or_json_value)
         BeJSON.new(matcher, ComposableJSONMatchers.configuration)
-      elsif ComposableJSONMatchers.matcher?(matcher_or_structure)
-        BeJSON.new(matcher_or_structure, ComposableJSONMatchers.configuration)
       else
-        raise ArgumentError, 'You must pass a matcher, a hash, or an array to `be_json` matcher.'
+        raise ArgumentError, 'You must pass a matcher or a JSON value ' \
+                             '(hash, array, numeric, string, true, false, or nil) ' \
+                             'to `be_json` matcher.'
       end
     end
   end
