@@ -1,5 +1,4 @@
 [![Gem Version](https://badge.fury.io/rb/rspec-composable_json_matchers.svg)](http://badge.fury.io/rb/rspec-composable_json_matchers)
-[![Dependency Status](https://gemnasium.com/yujinakayama/rspec-composable_json_matchers.svg)](https://gemnasium.com/yujinakayama/rspec-composable_json_matchers)
 [![Build Status](https://travis-ci.org/yujinakayama/rspec-composable_json_matchers.svg?branch=master&style=flat)](https://travis-ci.org/yujinakayama/rspec-composable_json_matchers)
 [![Coverage Status](https://coveralls.io/repos/yujinakayama/rspec-composable_json_matchers/badge.svg?branch=master&service=github)](https://coveralls.io/github/yujinakayama/rspec-composable_json_matchers?branch=master)
 [![Code Climate](https://codeclimate.com/github/yujinakayama/rspec-composable_json_matchers/badges/gpa.svg)](https://codeclimate.com/github/yujinakayama/rspec-composable_json_matchers)
