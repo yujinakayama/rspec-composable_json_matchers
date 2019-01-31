@@ -1,3 +1,6 @@
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
 Lint/HandleExceptions:
   Exclude:
     - 'spec/**/*'
