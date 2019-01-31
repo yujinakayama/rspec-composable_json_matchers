@@ -123,6 +123,14 @@ because there's no object that is parsed from JSON and behaves differently betwe
 
 Of course, any other custom matchers can also be used.
 
+Also, using [the built-in matcher aliases](https://www.rubydoc.info/gems/rspec-expectations/RSpec/Matchers) is recommended since it reads well:
+
+```ruby
+# Equivalents
+expect('{ "a": "foo" }').to be_json matching(a: a_string_including('oo')) # Matcher aliases
+expect('{ "a": "foo" }').to be_json match(a: include('oo')) # Original matcher names
+```
+
 ### `matching`
 
 * Alias of [`match`](https://relishapp.com/rspec/rspec-expectations/docs/composing-matchers#composing-matchers-with-`match`:) matcher
