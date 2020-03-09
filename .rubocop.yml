@@ -9,6 +9,9 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
+Naming/RescuedExceptionsVariableName:
+  PreferredName: error
+
 Metrics/LineLength:
   Max: 100
 
