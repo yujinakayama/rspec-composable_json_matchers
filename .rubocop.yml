@@ -1,7 +1,7 @@
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
 
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Exclude:
     - 'spec/**/*'
 
