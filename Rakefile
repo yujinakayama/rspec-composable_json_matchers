@@ -11,4 +11,9 @@ end
 RuboCop::RakeTask.new
 
 task default: %i[spec rubocop]
-task ci: %i[spec rubocop]
+
+if RUBY_VERSION >= '2.3'
+  task ci: %i[spec rubocop]
+else
+  task ci: :spec
+end
