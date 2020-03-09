@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 
 RSpec.describe '#be_json matcher' do

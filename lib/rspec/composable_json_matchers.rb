@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rspec/composable_json_matchers/be_json'
 require 'rspec/composable_json_matchers/configuration'
 require 'rspec/composable_json_matchers/version'
