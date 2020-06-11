@@ -4,11 +4,14 @@ jobs:
   rspec:
     name: RSpec
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby: [ruby-2.2, ruby-2.7, ruby-head, jruby]
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: ${{ matrix.ruby }}
       - run: bundle install
       - run: bundle exec rspec
   rubocop:
